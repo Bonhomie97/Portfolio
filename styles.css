@@ -161,8 +161,8 @@ body {
 }
 
 .logo {
-  width: 58px;
-  height: 58px;
+  width: 52px;
+  height: 52px;
   display: grid;
   place-items: center;
   overflow: hidden;
@@ -174,18 +174,18 @@ body {
   height: 100%;
   display: block;
   object-fit: cover;
-  transform: scale(1.65);
+  transform: scale(1.4);
   transition: transform .25s ease;
 }
 
 .logo:hover img {
-  transform: scale(1.72);
+  transform: scale(1.46);
 }
 
 @media(max-width: 720px) {
   .logo {
-    width: 48px;
-    height: 48px;
+    width: 44px;
+    height: 44px;
   }
 }
 
