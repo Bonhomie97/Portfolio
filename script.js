@@ -1,3 +1,10 @@
+const logoImage = document.querySelector('.logo img');
+const favicon = document.querySelector('#brand-favicon');
+
+if (logoImage && favicon) {
+  favicon.href = logoImage.src;
+}
+
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 if (!reducedMotion && 'IntersectionObserver' in window) {
@@ -16,3 +23,4 @@ if (!reducedMotion && 'IntersectionObserver' in window) {
 document.querySelectorAll('a[href="#"]').forEach((link) => {
   link.addEventListener('click', (event) => event.preventDefault());
 });
+
