@@ -7,6 +7,23 @@ if (logoImage && favicon) {
 
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+const backToTop = document.querySelector('.back-to-top');
+if (backToTop) {
+  const updateBackToTop = () => {
+    const visible = window.scrollY > 400;
+    backToTop.classList.toggle('is-visible', visible);
+    backToTop.toggleAttribute('inert', !visible);
+    backToTop.setAttribute('aria-hidden', String(!visible));
+  };
+
+  window.addEventListener('scroll', updateBackToTop, { passive: true });
+  backToTop.addEventListener('click', (event) => {
+    event.preventDefault();
+    window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' });
+  });
+  updateBackToTop();
+}
+
 if (!reducedMotion && 'IntersectionObserver' in window) {
   document.documentElement.classList.add('motion-ready');
   const observer = new IntersectionObserver((entries) => {
