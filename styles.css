@@ -430,7 +430,7 @@ body:has(.portfolio-viewer[open]) {
   align-items: center;
   gap: 28px;
   border-bottom: 0;
-  background: var(--coral);
+  background: #fff;
   color: var(--navy);
   font: 11px "DM Mono", monospace;
   font-weight: 700;
@@ -439,21 +439,35 @@ body:has(.portfolio-viewer[open]) {
 
 .portfolio-viewer-bar > span,
 .portfolio-viewer-bar a {
-  padding: 10px 14px;
-  border: 1px solid currentColor;
-  border-radius: 999px;
-  background: white;
+  padding: 10px 0;
+  border: 0;
+  background: transparent;
 }
 
 .portfolio-viewer-close {
-  padding: 10px 14px;
-  border: 1px solid currentColor;
-  border-radius: 999px;
-  background: white;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  background: transparent;
   color: inherit;
   font: inherit;
+  font-size: 22px;
+  font-weight: 700;
   text-transform: inherit;
   cursor: pointer;
+}
+
+.portfolio-viewer-bar a,
+.portfolio-viewer-close {
+  transition: color .2s ease;
+}
+
+.portfolio-viewer-bar a:hover,
+.portfolio-viewer-bar a:focus-visible,
+.portfolio-viewer-close:hover,
+.portfolio-viewer-close:focus-visible {
+  color: var(--coral);
 }
 
 .portfolio-local-content {
@@ -496,7 +510,7 @@ body:has(.portfolio-viewer[open]) {
   .portfolio-viewer {
     width: 100vw;
     height: 100dvh;
-    border: 0;
+    border: 5px solid var(--coral);
     border-radius: 0;
   }
 
