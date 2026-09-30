@@ -76,8 +76,11 @@
 .catalog-contact-links { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
 .catalog-contact-links .catalog-action { margin: 0; }
 .catalog-contact .catalog-action:hover { background: white; color: var(--navy); }
-.catalog-contact-links > a:last-child { font-size: 14px; text-decoration: underline; text-underline-offset: 4px; }
-.catalog-contact-links > a:last-child:hover { color: white; }
+.catalog-contact-links > a:not(.catalog-action) { font-size: 14px; text-decoration: underline; text-underline-offset: 4px; }
+.catalog-contact-links > a:not(.catalog-action):hover { color: white; }
+.catalog-contact-links .catalog-action { text-decoration: none; }
+.catalog-contact-links .catalog-action:hover,
+.catalog-contact-links .catalog-action:focus-visible { background: white; color: var(--navy); text-decoration: none; }
 .catalog-service a:focus-visible,
 .catalog-service summary:focus-visible { outline: 3px solid currentColor; outline-offset: 5px; }
 
