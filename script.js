@@ -142,3 +142,29 @@ if (heroSlider) {
 
   if (slides.length > 1) startSlider();
 }
+// Native summaries retain keyboard activation; delay closing until motion finishes.
+document.querySelectorAll('.about-accordion details').forEach(detail => {
+  const summary = detail.querySelector('summary');
+  const content = detail.querySelector('.about-detail');
+  let animation, fade, targetOpen = detail.open;
+  summary.addEventListener('click', event => {
+    event.preventDefault();
+    const startHeight = detail.getBoundingClientRect().height;
+    const startOpacity = getComputedStyle(content).opacity;
+    targetOpen = !targetOpen;
+    if (animation) animation.cancel();
+    if (fade) fade.cancel();
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      detail.open = targetOpen;
+      return;
+    }
+    const wasClosed = !detail.open;
+    detail.open = true;
+    const endHeight = targetOpen ? detail.getBoundingClientRect().height : summary.offsetHeight;
+    animation = detail.animate([{height:startHeight+'px'},{height:endHeight+'px'}],
+      {duration:260,easing:'cubic-bezier(.2,.7,.2,1)'});
+    fade = content.animate([{opacity:wasClosed?0:startOpacity},{opacity:targetOpen?1:0}],
+      {duration:260,easing:'ease-out'});
+    animation.onfinish = () => { detail.open = targetOpen; animation = null; };
+  });
+});
