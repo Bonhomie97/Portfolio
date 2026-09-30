@@ -9,8 +9,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Manrope:wght@400;500;600;800&family=Playfair+Display:ital,wght@1,500;1,800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260918-08">
-  <script src="script.js?v=20260918-01" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20260930-01">
+  <link rel="stylesheet" href="catalog-service.css?v=20260930-01">
+  <script src="script.js?v=20260922-02" defer></script>
 </head>
 <body>
   <header class="nav shell">
@@ -38,6 +39,8 @@
           </picture>
         </div>
       </div>
+      <button class="hero-arrow hero-arrow-prev" type="button" data-hero-step="-1" aria-label="Portada anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></button>
+      <button class="hero-arrow hero-arrow-next" type="button" data-hero-step="1" aria-label="Portada siguiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg></button>
       <div class="hero-pagination" aria-label="Seleccionar portada">
         <button type="button" class="is-active" data-hero-dot="0" aria-label="Ver portada 1" aria-current="true"></button>
         <button type="button" data-hero-dot="1" aria-label="Ver portada 2" aria-current="false"></button>
@@ -104,10 +107,87 @@
       <span>Catálogos interactivos · Alejandro Montoya</span>
       <button type="button" class="portfolio-viewer-close catalog-viewer-close" aria-label="Cerrar Catálogos interactivos">×</button>
     </div>
-    <div class="portfolio-local-content" aria-label="Proyecto Catálogos interactivos completo">
-       <img src="assets/trabajos/catalogo-01.avif" alt="Presentación del sistema de catálogos interactivos">
-       <img src="assets/trabajos/catalogo-02.avif" alt="Beneficios del sistema de catálogos interactivos" loading="lazy">
-       <img src="assets/trabajos/catalogo-03.avif" alt="Ejemplo de catálogo interactivo para Chango Más" loading="lazy">
+    <div class="portfolio-local-content catalog-service" aria-label="Servicio de catálogos dinámicos">
+      <section class="catalog-intro catalog-section">
+        <div>
+          <p class="catalog-eyebrow">Diseño + actualización gestionada</p>
+          <h2>Muchos cambios.<br><em>Una sola sincronización.</em></h2>
+          <p class="catalog-lead">Tu catálogo, preparado para cambiar con tu negocio.</p>
+          <p>Diseño una plantilla conectada a Google Sheets. Vos actualizás la información; yo sincronizo los cambios, reviso el resultado y te entrego las piezas listas para usar.</p>
+          <a class="catalog-action" href="https://wa.me/5491122515567?text=Hola%20Alejandro%2C%20me%20interesa%20el%20servicio%20de%20cat%C3%A1logos%20din%C3%A1micos.%20Necesito%20actualizar%3A%20" target="_blank" rel="noopener noreferrer">Contame qué necesitás ↗</a>
+          <p class="catalog-note">Ideal si actualizás productos, precios u ofertas de forma recurrente.</p>
+        </div>
+        <figure class="catalog-cover">
+          <img src="assets/lindabell/pagina-1.avif" width="1414" height="2000" alt="Portada del catálogo comercial de Lindabell, con productos y descuentos de distintas marcas" loading="lazy">
+          <figcaption>Proyecto real · Lindabell · Catálogo multimarca</figcaption>
+        </figure>
+      </section>
+
+      <section class="catalog-section catalog-process" aria-labelledby="catalog-process-title">
+        <p class="catalog-eyebrow">Así trabajamos</p>
+        <h3 id="catalog-process-title">Vos gestionás los datos.<br>Yo me encargo de la entrega.</h3>
+        <ol class="catalog-steps">
+          <li><span>01</span><h4>Diseñamos la base</h4><p>Preparo la plantilla en Figma y la planilla con los campos y las variantes que necesita tu catálogo.</p></li>
+          <li><span>02</span><h4>Cargás tus cambios</h4><p>Actualizás la información en Google Sheets y me avisás cuando terminaste. Podés reunir todos los cambios antes de enviarlos.</p></li>
+          <li><span>03</span><h4>Recibís tus piezas</h4><p>Sincronizo la tanda, reviso el diseño y exporto los archivos en PDF, PNG o JPG, según lo acordado.</p></li>
+        </ol>
+        <p class="catalog-delivery"><strong>Actualizaciones en hasta 1 día hábil.</strong> Desde que confirmás que la planilla está completa, para cambios previstos en la plantilla. El armado inicial y los cambios de estructura tienen un plazo aparte.</p>
+      </section>
+
+      <section class="catalog-section" aria-labelledby="catalog-scope-title">
+        <p class="catalog-eyebrow">Una estructura definida, contenido flexible</p>
+        <h3 id="catalog-scope-title">Qué podés actualizar</h3>
+        <div class="catalog-scope">
+          <article><h4>Desde tu planilla</h4><ul><li>Precios, títulos y subtítulos.</li><li>Imágenes en los espacios existentes.</li><li>Ofertas, precios destacados y cuotas, con las variantes previamente configuradas.</li><li>Ocultar productos, cuando esa opción esté preparada.</li></ul></article>
+          <article><h4>Con un ajuste de diseño</h4><p>Agregar espacios para más productos, sumar páginas o crear nuevas distribuciones y variantes requiere mi intervención y se presupuesta por separado.</p><p>La sincronización se ejecuta al terminar la carga: los cambios no se publican solos mientras editás la planilla.</p></article>
+        </div>
+      </section>
+
+      <section class="catalog-section catalog-case" aria-labelledby="catalog-case-title">
+        <p class="catalog-eyebrow">Caso real · Lindabell</p>
+        <h3 id="catalog-case-title">Cinco páginas.<br>Un sistema de actualización.</h3>
+        <p>Una revista comercial que reúne productos, descuentos y condiciones de compra de distintas marcas. Diseñé la plantilla y su conexión con Google Sheets para actualizar el contenido de los espacios definidos.</p>
+        <p>En este proyecto, el cliente sincroniza y exporta por su cuenta. Es un ejemplo de la modalidad de autogestión, disponible a consultar.</p>
+        <div class="catalog-page-overview" aria-label="Vista general de las cinco páginas">
+          <img src="assets/lindabell/pagina-1.avif" width="1414" height="2000" alt="Página 1: acciones comerciales generales" loading="lazy">
+          <img src="assets/lindabell/pagina-2.avif" width="1414" height="2000" alt="Página 2: skincare Dorothy Gray" loading="lazy">
+          <img src="assets/lindabell/pagina-3.avif" width="1414" height="2000" alt="Página 3: maquillaje y cuidado personal Dorothy Gray" loading="lazy">
+          <img src="assets/lindabell/pagina-4.avif" width="1414" height="2000" alt="Página 4: cuidado capilar Inecto" loading="lazy">
+          <img src="assets/lindabell/pagina-5.avif" width="1414" height="2000" alt="Página 5: productos Claridge y Reef" loading="lazy">
+        </div>
+        <details class="catalog-pages">
+          <summary>Ver las 5 páginas en detalle</summary>
+          <div class="catalog-page-detail">
+            <img src="assets/lindabell/pagina-1.avif" width="1414" height="2000" alt="Página completa 1: acciones comerciales generales" loading="lazy">
+            <img src="assets/lindabell/pagina-2.avif" width="1414" height="2000" alt="Página completa 2: skincare Dorothy Gray" loading="lazy">
+            <img src="assets/lindabell/pagina-3.avif" width="1414" height="2000" alt="Página completa 3: cuidado personal Dorothy Gray" loading="lazy">
+            <img src="assets/lindabell/pagina-4.avif" width="1414" height="2000" alt="Página completa 4: cuidado capilar Inecto" loading="lazy">
+            <img src="assets/lindabell/pagina-5.avif" width="1414" height="2000" alt="Página completa 5: Claridge y Reef" loading="lazy">
+          </div>
+        </details>
+        <p class="catalog-note">Muestra de diseño compartida con autorización. Las ofertas y condiciones pertenecen a una versión de muestra y no representan promociones vigentes.</p>
+      </section>
+
+      <section class="catalog-section" aria-labelledby="catalog-options-title">
+        <p class="catalog-eyebrow">Un servicio a tu medida</p>
+        <h3 id="catalog-options-title">El armado inicial.<br>Las actualizaciones que necesites.</h3>
+        <div class="catalog-options">
+          <article><h4>Armado inicial</h4><p>Diseño personalizado, preparación de la planilla, conexión, pruebas y primera entrega. El alcance y el plazo se acuerdan según el proyecto.</p></article>
+          <article><h4>Actualizaciones gestionadas</h4><p>Por tanda o con un abono mensual de entregas acordadas. Vos trabajás en la planilla; no necesitás manejar Figma.</p></article>
+        </div>
+        <details class="catalog-faq"><summary>¿Mi equipo puede manejar el sistema?</summary><p>Sí, podemos evaluar la entrega de la plantilla y una capacitación para sincronizar, revisar y exportar en Figma. Revisamos las herramientas y permisos necesarios; el soporte posterior se acuerda aparte.</p></details>
+        <details class="catalog-faq"><summary>¿Sirve si necesito un único catálogo?</summary><p>También puedo diseñarlo. La conexión con Google Sheets tiene más sentido cuando vas a actualizar el contenido con frecuencia; podemos definir qué opción se adapta a tu caso.</p></details>
+      </section>
+
+      <section class="catalog-section catalog-contact" aria-labelledby="catalog-contact-title">
+        <p class="catalog-eyebrow">Hablemos de tu catálogo</p>
+        <h3 id="catalog-contact-title">Menos cambios uno por uno.<br>Más tiempo para tu negocio.</h3>
+        <p>Contame qué piezas usás, cuántos productos manejás y con qué frecuencia cambian. Con eso, evaluamos el alcance y preparo una propuesta.</p>
+        <div class="catalog-contact-links">
+          <a class="catalog-action" href="https://wa.me/5491122515567?text=Hola%20Alejandro%2C%20me%20interesa%20el%20servicio%20de%20cat%C3%A1logos%20din%C3%A1micos.%20Necesito%20actualizar%3A%20" target="_blank" rel="noopener noreferrer">Consultar por WhatsApp ↗</a>
+          <a href="mailto:Alejandromontoya134@gmail.com?subject=Consulta%20por%20cat%C3%A1logos%20din%C3%A1micos">Prefiero escribir por email ↗</a>
+        </div>
+      </section>
     </div>
   </dialog>
 

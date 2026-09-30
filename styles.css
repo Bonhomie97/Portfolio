@@ -266,6 +266,45 @@ body {
   background: var(--coral);
 }
 
+.hero-arrow {
+  opacity: 1;
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .92);
+  color: var(--navy);
+  box-shadow: 0 3px 14px rgba(7, 13, 51, .15);
+  cursor: pointer;
+  transition: color .2s, background-color .2s, opacity .2s;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .hero-arrow { opacity: 0; pointer-events: none; }
+  .hero-slider:hover .hero-arrow,
+  .hero-slider:has(:focus-visible) .hero-arrow {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+.hero-arrow-prev { left: 12px; }
+.hero-arrow-next { right: 12px; }
+.hero-arrow svg { width: 24px; height: 24px; }
+.hero-arrow:hover { background: var(--navy); color: white; }
+.hero-arrow:focus-visible { outline: 3px solid var(--navy); outline-offset: 3px; }
+
+@media(max-width: 720px) {
+  .hero-arrow { top: auto; bottom: 20px; transform: none; }
+}
+
 @media(max-width: 720px) {
   .hero-slider {
     height: calc(100svh - 72px);
@@ -429,7 +468,7 @@ body:has(.portfolio-viewer[open]) {
   grid-template-columns: 1fr auto auto;
   align-items: center;
   gap: 28px;
-  border-bottom: 0;
+  border-bottom: 3px solid var(--coral);
   background: #fff;
   color: var(--navy);
   font: 11px "DM Mono", monospace;

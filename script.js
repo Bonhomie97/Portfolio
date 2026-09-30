@@ -112,6 +112,7 @@ if (heroSlider) {
 
   const startSlider = () => {
     window.clearInterval(sliderTimer);
+    if (document.hidden || heroSlider.querySelector(':focus-visible')) return;
     sliderTimer = window.setInterval(() => {
       showSlide((activeSlide + 1) % slides.length);
     }, 5500);
@@ -124,10 +125,16 @@ if (heroSlider) {
     });
   });
 
-  heroSlider.addEventListener('mouseenter', () => window.clearInterval(sliderTimer));
-  heroSlider.addEventListener('mouseleave', startSlider);
-  heroSlider.addEventListener('focusin', () => window.clearInterval(sliderTimer));
-  heroSlider.addEventListener('focusout', startSlider);
+  heroSlider.querySelectorAll('[data-hero-step]').forEach((button) => {
+    button.addEventListener('click', () => {
+      const step = Number(button.dataset.heroStep);
+      showSlide((activeSlide + step + slides.length) % slides.length);
+      startSlider();
+    });
+  });
+
+  heroSlider.addEventListener('focusin', startSlider);
+  heroSlider.addEventListener('focusout', () => window.setTimeout(startSlider, 0));
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) window.clearInterval(sliderTimer);
     else startSlider();
